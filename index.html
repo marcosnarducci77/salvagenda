@@ -140,7 +140,9 @@ Resposta salva na planilha em segundos
 <input type="text" name="nome" placeholder="Seu nome" required/>
 <input type="email" name="email" placeholder="Seu e-mail" required/>
 <input type="tel" name="whatsapp" placeholder="WhatsApp (com DDD)" required/>
-<input type="text" name="clinica" placeholder="Nome do consultório / clínica" required/>
+        <input type="date" name="data_agendamento" placeholder="Data da consulta" required/>
+        <input type="time" name="horario" placeholder="Horário" required/>
+        <input type="text" name="profissional" placeholder="Nome do profissional" required/>
 <button type="submit">Quero começar agora</button>
 </form>
 <div class="success-message" id="successMsg">Cadastro realizado! Em breve entraremos em contato pelo WhatsApp.</div>
@@ -158,8 +160,7 @@ Resposta salva na planilha em segundos
 document.getElementById('betaForm').addEventListener('submit',async function(e){
 e.preventDefault();
 const form=e.target;
-const data={nome:form.nome.value,whatsapp:form.whatsapp.value,email:form.email.value,clinica:form.clinica.value,data_cadastro:new Date().toLocaleString('pt-BR')};
-try{
+      const data={nome:form.nome.value,whatsapp:form.whatsapp.value,data_agendamento:form.data_agendamento.value,horario:form.horario.value,profissional:form.profissional.value,email:form.email.value,confirmacao:""};try{
 const res=await fetch('https://marcosnarducci.app.n8n.cloud/webhook/salvagenda',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
 if(res.ok){document.getElementById('successMsg').style.display='block';form.reset();}else{alert('Erro ao enviar. Tente novamente.');}
 }catch(err){alert('Erro de conexão. Tente novamente.');}
