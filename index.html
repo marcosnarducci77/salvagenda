@@ -3,110 +3,153 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SalvAgenda - Confirmacao de Consultas pelo WhatsApp</title>
-<meta name="description" content="SalvAgenda - Confirme consultas automaticamente pelo WhatsApp. Reduza faltas na sua clinica sem esforco."/>
-<meta property="og:title" content="SalvAgenda - Chega de falta sem aviso"/>
-<meta property="og:description" content="SalvAgenda - Confirme consultas automaticamente pelo WhatsApp. Reduza faltas na sua clinica sem esforco."/>
+<title>SalvAgenda - Confirmação Automática de Consultas pelo WhatsApp</title>
+<meta name="description" content="Reduza faltas em sua clínica com confirmação automática de consultas pelo WhatsApp. Grátis por 7 dias, sem cartão."/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="SalvAgenda - Chega de falta sem aviso na sua clínica"/>
+<meta property="og:description" content="Confirmação automática de consultas pelo WhatsApp. Reduza no-show, sem app, sem mensalidade cara."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://marcosnarducci77.github.io/salvagenda/"/>
+<meta property="og:image" content="https://marcosnarducci77.github.io/salvagenda/og-image.png"/>
+<meta property="og:site_name" content="SalvAgenda"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SalvAgenda - Chega de falta sem aviso"/>
+<meta name="twitter:description" content="Confirmação automática de consultas pelo WhatsApp. Grátis por 7 dias."/>
+<meta name="twitter:image" content="https://marcosnarducci77.github.io/salvagenda/og-image.png"/>
+
+<link rel="canonical" href="https://marcosnarducci77.github.io/salvagenda/"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',sans-serif;background:#f9fafb;color:#1a1a2e}
 header{background:#0d9488;color:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
 header h1{font-size:1.6rem;font-weight:700}
-.hero{background:linear-gradient(135deg,#0d9488,#14b8a6);color:white;text-align:center;padding:80px 24px 60px}
+.hero{background:linear-gradient(135deg,#0d9488,#14b8a6);color:white;text-align:center;padding:80px 24px}
 .hero h2{font-size:2.2rem;font-weight:800;max-width:700px;margin:0 auto 16px}
-.hero p{font-size:1.1rem;opacity:.9;max-width:560px;margin:0 auto 32px}
-.hero a{background:white;color:#0d9488;padding:14px 36px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.hero p{font-size:1.1rem;opacity:0.9;max-width:560px;margin:0 auto 32px}
 .features{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:60px 24px;background:white}
-.card{background:#f0fdfa;border-left:4px solid #0d9488;border-radius:12px;padding:24px;max-width:280px;flex:1 1 240px}
-.card .icon{font-size:2rem;margin-bottom:10px}
+.card{background:#f0fdfa;border-left:4px solid #0d9488;border-radius:12px;padding:24px;max-width:280px;flex:1 1 160px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
 .card h3{font-weight:700;margin-bottom:6px}
-.card p{font-size:.9rem;color:#4b5563}
-.social-proof{background:#f0fdf4;text-align:center;padding:48px 24px}
+.card p{font-size:0.9rem;color:#4b5563}
+.social-proof{background:#f0fdfa;text-align:center;padding:48px 24px}
 .social-proof .counter{font-size:2rem;font-weight:800;color:#0d9488;margin-bottom:8px}
 .social-proof .sub{color:#6b7280;margin-bottom:32px}
-.testimonial{background:white;border-radius:16px;padding:28px;max-width:500px;margin:0 auto;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.testimonial blockquote{font-size:1.1rem;font-style:italic;color:#1f2937;margin-bottom:12px}
-.testimonial cite{font-size:.9rem;color:#6b7280;font-weight:600}
-.how{background:#f0fdfa;text-align:center;padding:60px 24px}
-.how h2{font-size:1.8rem;font-weight:700;margin-bottom:36px}
-.steps{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-.step{background:white;border-radius:12px;padding:24px 18px;max-width:200px;flex:1 1 160px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.step .num{background:#0d9488;color:white;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 14px}
-.cta{background:#0d9488;color:white;text-align:center;padding:60px 24px}
-.cta .badge{display:inline-block;background:#ef4444;color:white;padding:4px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px}
-.cta h2{font-size:1.9rem;font-weight:800;margin-bottom:8px}
-.cta p{opacity:.9;margin-bottom:28px}
-form{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
-form input{padding:13px 16px;border-radius:8px;border:none;font-size:1rem}
-form button{background:#134e4a;color:white;border:none;padding:15px;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer}
-#msg{margin-top:10px;font-size:.95rem;padding:10px;border-radius:8px}
-footer{text-align:center;padding:20px;font-size:.85rem;color:#6b7280}
-.wa-btn{position:fixed;bottom:24px;right:24px;background:#25d366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:9999}
+.testimonial{background:white;border-radius:16px;padding:20px;max-width:500px;margin:0 auto;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.testimonial cite{font-size:0.9rem;color:#6b7280;font-weight:600}
+.steps{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:60px 24px}
+.step{background:white;border-radius:12px;padding:30px 18px;height:80px;width:200px;flex:1 1 160px;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;align-items:center;gap:12px}
+.step .num{background:#0d9488;color:white;padding:16px;height:50px;width:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem}
+.cta{background:white;border-radius:16px;padding:60px;margin:0 auto 32px;box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.cta h2{font-size:1.8rem;font-weight:800;margin-bottom:36px}
+form{max-width:500px;margin:0 auto}
+input{padding:14px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;width:100%;margin-bottom:16px}
+button{background:#0d9488;color:white;padding:16px 36px;border:none;border-radius:50px;font-weight:700;font-size:1.1rem;cursor:pointer;width:100%;margin-bottom:16px}
+button:hover{background:#14b8a6}
+.success-message{background:#d1fae5;color:#065f46;padding:16px;border-radius:8px;margin:16px auto;max-width:500px;display:none;text-align:center;font-weight:600}
+.whatsapp-float{position:fixed;bottom:32px;right:32px;background:#25d366;color:white;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.4);font-size:2rem;text-decoration:none;z-index:999}
+.whatsapp-float:hover{background:#1fba57}
+.how{padding:40px 24px;text-align:center}
+.how h2{font-size:1.8rem;font-weight:800;margin-bottom:36px}
+footer{background:#1a1a2e;color:white;padding:60px 24px;text-align:center}
+footer p{font-size:0.9rem}
+@media(max-width:700px){.hero h2{font-size:1.6rem}.cta h2{font-size:1.4rem}.features,.steps{flex-direction:column}}
 </style>
 </head>
 <body>
-<header><h1>SalvAgenda</h1><span>Confirmacao automatica pelo WhatsApp</span></header>
-<section class="hero">
-<h2>Chega de falta sem aviso na sua clinica</h2>
-<p>O SalvAgenda envia confirmacoes automaticas pelo WhatsApp e salva as respostas dos pacientes em tempo real. Sem esforco, sem equipe, sem faltas.</p>
-<a href="#cadastro">Quero confirmar consultas automaticamente</a>
-</section>
-<section class="features">
-<div class="card"><div class="icon">📲</div><h3>WhatsApp automatico</h3><p>Seus pacientes recebem a confirmacao via WhatsApp, o canal que eles ja usam todo dia.</p></div>
-<div class="card"><div class="icon">📊</div><h3>Google Sheets em tempo real</h3><p>Cada resposta e registrada automaticamente na sua planilha. Zero digitacao manual.</p></div>
-<div class="card"><div class="icon">⚡</div><h3>Setup em minutos</h3><p>Voce configura uma unica vez e o sistema funciona sozinho para sempre.</p></div>
-<div class="card"><div class="icon">💰</div><h3>Economize por consulta</h3><p>Uma falta custa em media R$150. O SalvAgenda paga a si mesmo no primeiro mes.</p></div>
-</section>
-<section class="social-proof">
-<div class="counter">+120</div>
-<div class="sub">clinicas ja usam o SalvAgenda</div>
-<div class="testimonial">
-<blockquote>"Reduzi 80% das faltas no primeiro mes. Fantastico!"</blockquote>
-<cite>— Dra. Carla Mendes, Clinica OdontoVita SP</cite>
+
+<header>
+<h1>SalvAgenda</h1>
+<span style="background:rgba(255,255,255,0.2);padding:6px 12px;border-radius:20px;font-size:0.85rem;font-weight:700">⚡ Vagas beta limitadas</span>
+</header>
+
+<div class="hero">
+<h2>Chega de falta sem aviso na sua clínica</h2>
+<p>Confirmação automática de consultas pelo WhatsApp. Reduza no-show, economize tempo, aumente sua receita.</p>
 </div>
-</section>
-<section class="how">
+
+<div class="features">
+<div class="card">
+<h3>✨ Confirmação Automática</h3>
+<p>O sistema envia as mensagens de confirmação sem você mover um dedo.</p>
+</div>
+<div class="card">
+<h3>📝 Respostas Organizadas</h3>
+<p>Todas as respostas (SIM ou NÃO) são salvas automaticamente na sua planilha.</p>
+</div>
+<div class="card">
+<h3>💰 Sem Mensalidade Absurda</h3>
+<p>Teste grátis por 7 dias. Sem cartão de crédito, sem pegadinha.</p>
+</div>
+<div class="card">
+<h3>📱 Sem App Para Instalar</h3>
+<p>Funciona direto no WhatsApp do paciente. Simples assim.</p>
+</div>
+</div>
+
+<div class="how">
 <h2>Como funciona</h2>
 <div class="steps">
-<div class="step"><div class="num">1</div><p>Voce cadastra sua clinica no SalvAgenda</p></div>
-<div class="step"><div class="num">2</div><p>O sistema envia mensagem de confirmacao pelo WhatsApp automaticamente</p></div>
-<div class="step"><div class="num">3</div><p>O paciente responde SIM ou NAO</p></div>
-<div class="step"><div class="num">4</div><p>A resposta e salva na sua planilha em segundos</p></div>
+<div class="step">
+<div class="num">1</div>
+Você cadastra sua clínica
 </div>
-</section>
-<section class="cta" id="cadastro">
-<div class="badge">🔥 Vagas limitadas para beta gratuito</div>
-<h2>Comece gratis por 7 dias</h2>
-<p>Sem cartao de credito. Cancele quando quiser.</p>
-<form id="leadForm">
+<div class="step">
+<div class="num">2</div>
+O sistema envia confirmação automática
+</div>
+<div class="step">
+<div class="num">3</div>
+Paciente responde SIM ou NÃO
+</div>
+<div class="step">
+<div class="num">4</div>
+Resposta salva na planilha em segundos
+</div>
+</div>
+</div>
+
+<div class="social-proof">
+<div class="counter">+120</div>
+<div class="sub">Clínicas já testando o beta gratuito</div>
+<div class="testimonial">
+<p>“Perdia 3 a 4 consultas por semana. Com o SalvAgenda, isso caiu para menos de 1. Minha agenda ficou cheia e minha receita aumentou.”</p>
+<br/>
+<cite>— Dra. Patricia Stellet, Dentista em São Paulo</cite>
+</div>
+</div>
+
+<div class="cta">
+<h2>Comece grátis por 7 dias</h2>
+<p style="text-align:center;color:#6b7280;margin-bottom:28px">Sem cartão de crédito. Cancele quando quiser.</p>
+<form id="betaForm">
 <input type="text" name="nome" placeholder="Seu nome" required/>
 <input type="email" name="email" placeholder="Seu e-mail" required/>
 <input type="tel" name="whatsapp" placeholder="WhatsApp (com DDD)" required/>
-<input type="text" name="clinica" placeholder="Nome da clinica" required/>
-<button type="submit">Quero comecar agora</button>
-<div id="msg"></div>
+<input type="text" name="clinica" placeholder="Nome da clínica" required/>
+<button type="submit">Quero começar agora</button>
 </form>
-</section>
-<footer>&copy; 2025 SalvAgenda. Todos os direitos reservados.</footer>
-<a class="wa-btn" href="https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+SalvAgenda" target="_blank">💬</a>
+<div class="success-message" id="successMsg">Cadastro realizado! Em breve entraremos em contato pelo WhatsApp.</div>
+</div>
+
+<a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener">
+💬
+</a>
+
+<footer>
+<p>© 2026 SalvAgenda. Solução automatizada de confirmação de consultas.</p>
+</footer>
+
 <script>
-document.getElementById('leadForm').addEventListener('submit',async function(e){
+document.getElementById('betaForm').addEventListener('submit',async function(e){
 e.preventDefault();
-var btn=this.querySelector('button');
-var msg=document.getElementById('msg');
-btn.disabled=true;btn.textContent='Enviando...';
-msg.style.display='none';
-var data={nome:this.nome.value,email:this.email.value,whatsapp:this.whatsapp.value,clinica:this.clinica.value,data_cadastro:new Date().toLocaleString('pt-BR')};
+const form=e.target;
+const data={nome:form.nome.value,whatsapp:form.whatsapp.value,email:form.email.value,clinica:form.clinica.value,data_cadastro:new Date().toLocaleString('pt-BR')};
 try{
-await fetch('https://marcosnarducci.app.n8n.cloud/webhook/zapi-salvagenda',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-msg.style.background='#d1fae5';msg.style.color='#065f46';msg.style.display='block';
-msg.textContent='Cadastro realizado! Em breve entraremos em contato pelo WhatsApp.';
-this.reset();
-}catch(err){
-msg.style.background='#fee2e2';msg.style.color='#991b1b';msg.style.display='block';
-msg.textContent='Erro ao enviar. Tente novamente.';
-}
-btn.disabled=false;btn.textContent='Quero comecar agora';
+const res=await fetch('https://marcosnarducci.app.n8n.cloud/webhook/salvagenda',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+if(res.ok){document.getElementById('successMsg').style.display='block';form.reset();}else{alert('Erro ao enviar. Tente novamente.');}
+}catch(err){alert('Erro de conexão. Tente novamente.');}
 });
 </script>
 </body>
