@@ -1,4 +1,4 @@
-﻿import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import {
   createClient,
   deleteClientById,
@@ -60,7 +60,11 @@ export function patchClientController(
       });
     }
 
-    const client = updateClientById(req.params.id, result.data);
+    const clientId = Array.isArray(req.params.id)
+      ? req.params.id[0]
+      : req.params.id;
+
+    const client = updateClientById(clientId, result.data);
 
     if (!client) {
       return res.status(404).json({
@@ -83,7 +87,11 @@ export function deleteClientController(
   next: NextFunction
 ) {
   try {
-    const deleted = deleteClientById(req.params.id);
+    const clientId = Array.isArray(req.params.id)
+      ? req.params.id[0]
+      : req.params.id;
+
+    const deleted = deleteClientById(clientId);
 
     if (!deleted) {
       return res.status(404).json({
