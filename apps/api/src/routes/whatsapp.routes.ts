@@ -1,9 +1,8 @@
 import { Router } from 'express';
 import { whatsappWebhookController } from '../controllers/whatsapp.controller.js';
 
-const router = Router();
+const whatsappRouter = Router();
 
-// Endpoint para receber mensagens de webhook do provider de WhatsApp
-router.post('/webhook', whatsappWebhookController);
+whatsappRouter.post('/webhook', whatsappWebhookController);
 
-export default router;
+export default whatsappRouter;
