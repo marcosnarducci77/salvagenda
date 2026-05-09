@@ -1,3 +1,4 @@
+@"
 import { Request, Response } from 'express';
 import { dispatchWhatsAppInbound } from '../services/whatsapp-dispatcher.js';
 
@@ -21,3 +22,4 @@ export function whatsappWebhookController(req: Request, res: Response) {
     result
   });
 }
+"@ | Set-Content -Path .\src\controllers\whatsapp.controller.ts
