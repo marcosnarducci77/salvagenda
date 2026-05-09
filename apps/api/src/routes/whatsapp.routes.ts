@@ -3,6 +3,6 @@ import { whatsappWebhookController } from '../controllers/whatsapp.controller.js
 
 const whatsappRouter = Router();
 
-whatsappRouter.post('/webhook', whatsappWebhookController);
+whatsappRouter.post('/whatsapp/webhook', whatsappWebhookController);
 
-export default whatsappRouter;
+export { whatsappRouter };
